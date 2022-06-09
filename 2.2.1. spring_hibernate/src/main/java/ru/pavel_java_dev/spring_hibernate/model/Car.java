@@ -1,4 +1,4 @@
-package hiber.model;
+package ru.pavel_java_dev.spring_hibernate.model;
 
 import javax.persistence.*;
 

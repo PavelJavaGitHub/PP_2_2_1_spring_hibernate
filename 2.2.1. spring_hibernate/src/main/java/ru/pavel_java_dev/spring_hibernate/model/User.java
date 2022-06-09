@@ -1,7 +1,4 @@
-package hiber.model;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+package ru.pavel_java_dev.spring_hibernate.model;
 
 import javax.persistence.*;
 

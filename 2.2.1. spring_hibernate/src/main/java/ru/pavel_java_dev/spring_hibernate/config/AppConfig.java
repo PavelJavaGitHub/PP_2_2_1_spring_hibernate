@@ -1,7 +1,7 @@
-package hiber.config;
+package ru.pavel_java_dev.spring_hibernate.config;
 
-import hiber.model.Car;
-import hiber.model.User;
+import ru.pavel_java_dev.spring_hibernate.model.Car;
+import ru.pavel_java_dev.spring_hibernate.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,11 +20,15 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan(value = "hiber")
+@ComponentScan(value = "ru.pavel_java_dev.spring_hibernate")
 public class AppConfig {
 
-   @Autowired
    private Environment env;
+
+   @Autowired
+   public AppConfig(Environment env) {
+      this.env = env;
+   }
 
    @Bean
    public DataSource getDataSource() {

@@ -1,20 +1,14 @@
-package hiber.service;
+package ru.pavel_java_dev.spring_hibernate.service;
 
-import hiber.model.Car;
-import hiber.model.User;
+import ru.pavel_java_dev.spring_hibernate.model.Car;
+import ru.pavel_java_dev.spring_hibernate.model.User;
 
 import java.util.List;
 
 public interface UserService {
     void add(User user);
 
-    void add(Car car);
-
     List<User> listUsers();
-
-    List<Car> listCars();
-
-    Car getCar(Long id);
 
     User getUserByCar(String model, int series);
 }
