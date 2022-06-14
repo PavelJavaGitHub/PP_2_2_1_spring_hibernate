@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     @Autowired
     public UserDaoImpl(SessionFactory sessionFactory) {
@@ -38,9 +38,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     public User getUserByCar(String model, int series) {
-        String hql = "from User as user\n" +
-                "where user.car = (\n from Car as car\n" +
-                "\twhere car.model = :model and car.series = :series)";
+        String hql = "from User as user where user.car = " +
+                "(from Car as car where car.model = :model and car.series = :series)";
 
         TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hql);
         query.setParameter("model", model);

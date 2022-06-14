@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class CarDaoImpl implements CarDao {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     @Autowired
     public CarDaoImpl(SessionFactory sessionFactory) {

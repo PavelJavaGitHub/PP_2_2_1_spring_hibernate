@@ -23,7 +23,7 @@ import java.util.Properties;
 @ComponentScan(value = "ru.pavel_java_dev.spring_hibernate")
 public class AppConfig {
 
-   private Environment env;
+   private final Environment env;
 
    @Autowired
    public AppConfig(Environment env) {
